@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mustache Activity</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Todo List</h1>
+  </header>
+
+  <main>
+
+    <form action="/" method="post">
+      <input type="text" name="item" placeholder="Add a Todo..." value="" />
+      <input type="submit" value="Add">
+    </form>
+
+    <form action="/update" method="post">
+      <ul id="incomplete">
+        {{#todos}}
+        <li><input type="checkbox" value="submit">{{todo}}</li>
+        {{/todos}}
+      </ul>
+    </form>
+
+    <h2>Completed Tasks</h2>
+    <ul id="complete">
+      {{#todos}}
+      <li>{{todo}}</li>
+      {{/todos}}
+    </ul>
+
+  </main>
+
+</body>
+
+</html>
